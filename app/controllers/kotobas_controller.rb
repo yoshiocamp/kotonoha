@@ -13,6 +13,10 @@ class KotobasController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @kotoba = Kotoba.find(params[:id])
+  end
+
   private
   def kotoba_params
     params.require(:kotoba).permit(:name, :text)
