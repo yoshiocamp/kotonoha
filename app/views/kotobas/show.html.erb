@@ -1,0 +1,19 @@
+<div class="contents row">
+  <div class="content_detail" style="background-image:mitei ">
+    <div class="text-content">
+       <p><%= @kotoba.text %></p>
+    </div>
+  </div>
+</div>
+
+<div class="show_boxes">
+  <div class="show_box">
+   <%= link_to '編集', edit_kotoba_path(@kotoba.id) %>
+  </div>  
+  <div class="show_box">
+    <%= link_to '削除',"path" %>
+  </div>  
+  <div class="show_box">
+    <%= link_to '滔々',"path" %>
+  </div>  
+</div> 

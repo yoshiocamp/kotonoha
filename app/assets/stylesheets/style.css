@@ -972,6 +972,54 @@ div.contents.row .success h3 {
   margin: 10px auto;
 }
 
+.content_detail {
+  height: 400px;
+  overflow: hidden; 
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  color: black;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+}
+
+.content_detail .text-content {
+  height: 100%;
+  overflow-y: auto; 
+  position: relative;
+  z-index: 2; 
+}
+
+.content_detail:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  *zoom: 1;
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.show_boxes{
+display: flex;
+justify-content: center;
+}
+
+.show_box{
+  height: 30px;
+  width: 100px;
+}
+
 form input,
 form textarea {
   width: 100%;

@@ -13,6 +13,16 @@ class KotobasController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @kotoba = Kotoba.find(params[:id])
+  end
+
+  def update
+    kotoba = Kotoba.find(params[:id])
+    kotoba.update(kotoba_params)
+    redirect_to root_path
+  end
+
   def show
     @kotoba = Kotoba.find(params[:id])
   end
