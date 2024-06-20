@@ -1,8 +1,8 @@
 class KotobasController < ApplicationController
 
   def index
-    @kotoba = Kotoba.all
+    @kotobas = Kotoba.all
   end
 
-  
+
 end
