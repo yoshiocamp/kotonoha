@@ -4,5 +4,7 @@ class KotobasController < ApplicationController
     @kotobas = Kotoba.all
   end
 
-
+  def new
+    @kotoba = Kotoba.new
+  end
 end
