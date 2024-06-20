@@ -9,12 +9,12 @@ class KotobasController < ApplicationController
   end
 
   def create
-    Kotoba.create(tweet_params)
+    Kotoba.create(kotoba_params)
     redirect_to root_path
   end
 
   private
-  def tweet_params
+  def kotoba_params
     params.require(:kotoba).permit(:name, :text)
   end
 end

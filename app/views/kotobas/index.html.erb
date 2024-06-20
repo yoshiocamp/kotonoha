@@ -1,8 +1,7 @@
 <div class="contents row">
   <% @kotobas.each do |kotoba| %>
     <div class="content_post" style="background-image:mitei ">
-      <p><%= kotoba.text %></p>
-      
+        <p><%= kotoba.text.truncate(45, omission: '...') %></p>
     </div>
   <% end %>
 </div>

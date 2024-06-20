@@ -862,7 +862,7 @@ div.contents.row div.content_post {
   margin: 20px 0;
   padding: 30px;
   position: relative;
-  height: 400px;
+  height: 100px;
   color: #fff;
   background-size: cover;
   background-position: center center;
@@ -947,18 +947,7 @@ div.contents.row div.content_post p {
   text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
 }
 
-div.contents.row div.content_post span.name {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  z-index: 2;
-  font-size: 13px;
-}
 
-div.contents.row div.content_post span.name a {
-  display: block;
-  color: #aaa;
-}
 
 div.contents.row div.content_post span.name a:hover {
   text-decoration: underline;
