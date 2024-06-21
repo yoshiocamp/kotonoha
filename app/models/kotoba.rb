@@ -2,6 +2,10 @@ class Kotoba < ApplicationRecord
   validates :text, presence: true
 
   validate :check_forbidden_words
+
+  def soft_delete
+    self.update_attribute(:delete_at, Time.current)
+  end
   
     private
   

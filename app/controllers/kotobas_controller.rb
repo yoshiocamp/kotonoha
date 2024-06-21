@@ -1,5 +1,5 @@
 class KotobasController < ApplicationController
-
+  before_action :set_kotoba, only:[:show, :edit, :destroy]
   def index
     @kotobas = Kotoba.all
   end
@@ -14,7 +14,7 @@ class KotobasController < ApplicationController
   end
 
   def edit
-    @kotoba = Kotoba.find(params[:id])
+    
   end
 
   def update
@@ -23,12 +23,24 @@ class KotobasController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @kotoba.destroy
+    respond_to do |format|
+      format.html { redirect_to kotobas_url, notice: 'Kotoba was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+
   def show
-    @kotoba = Kotoba.find(params[:id])
   end
 
   private
   def kotoba_params
     params.require(:kotoba).permit(:name, :text)
+  end
+
+  def set_kotoba
+    @kotoba = Kotoba.find(params[:id])
   end
 end

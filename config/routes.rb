@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'kotobas#index'
-  resources :kotobas, only: [:index, :new, :create, :show, :edit, :update]
+  resources :kotobas 
+    
 end
