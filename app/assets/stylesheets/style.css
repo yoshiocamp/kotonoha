@@ -1,1055 +1,512 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-/* ==========================================================================
- * HTML5 display definitions
- * ========================================================================== */
-/*
- * Correct `block` display not defined in IE 8/9. */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
+
+/*Google Fontsの読み込み
+---------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap');
+
+/*Font Awesomeの読み込み
+---------------------------------------------------------------------------*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+/*lightbox.cssの読み込み
+---------------------------------------------------------------------------*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css);
+
+
+/*opa1のキーフレーム設定
+---------------------------------------------------------------------------*/
+@keyframes opa1 {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
-/*
- * Correct `inline-block` display not defined in IE 8/9. */
-audio,
-canvas,
-video {
-  display: inline-block;
+
+/*animation1のキーフレーム設定（開閉ブロックのアニメーションに使用）
+---------------------------------------------------------------------------*/
+@keyframes animation1 {
+	0% {left: -200px;}
+	100% {left: 0px;}
 }
 
-/*
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices. */
-audio:not([controls]) {
-  display: none;
-  height: 0;
+
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body * {box-sizing: border-box;}
+html,body {
+	height: 100%;
+	font-size: 13px;	/*基準となるフォントサイズ。*/
 }
 
-/*
- * Address `[hidden]` styling not present in IE 8/9.
- * Hide the `template` element in IE, Safari, and Firefox < 22. */
-[hidden],
-template {
-  display: none;
-}
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
 
-/* ==========================================================================
- * Base
- * ========================================================================== */
-/*
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom. */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+	html, body {
+		font-size: 14px;	/*基準となるフォントサイズ。*/
+	}
 
-/*
- * Remove default margin. */
+	}/*追加指定ここまで*/
+
 body {
-  margin: 0;
+	font-family: "M PLUS 1", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-weight: 300;
+	font-optical-sizing: auto;
+	letter-spacing: 0.1rem;
+	text-indent: 0.1rem;
+	-webkit-text-size-adjust: none;
+	margin: 0;padding: 0;
+	line-height: 2.5;		/*行間*/
+	background: #5a9545;		/*背景色*/
+	color: #fff;			/*文字色*/
 }
 
-/* ==========================================================================
- * Links
- * ========================================================================== */
-/*
- * Remove the gray background color from active links in IE 10. */
+/*リセット*/
+figure {margin: 0;}
+dd {margin: 0;}
+nav,ul,li {margin: 0;padding: 0;}
+nav ul {list-style: none;}
+h1,h2,h3,h4 {font-weight: 400;}
+
+/*table全般の設定*/
+table {border-collapse:collapse;}
+
+/*画像全般の設定*/
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+
+/*videoタグ*/
+video {max-width: 100%;}
+
+/*iframeタグ*/
+iframe {width: 100%;}
+
+/*他*/
+input {font-size: 1rem;}
+strong {font-weight: 500;}
+
+
+/*リンクテキスト全般の設定
+---------------------------------------------------------------------------*/
 a {
-  background: transparent;
+	color: #fff;	/*文字色*/
+	transition: 0.3s;	/*hoverまでにかける時間。0.3秒。*/
 }
 
-/*
- * Address `outline` inconsistency between Chrome and other browsers. */
-a:focus {
-  outline: thin dotted;
-}
-
-/*
- * Improve readability when focused and also mouse hovered in all browsers. */
-a:active,
+/*マウスオン時*/
 a:hover {
-  outline: 0;
+	text-decoration: none;
 }
 
-/* ==========================================================================
- * Typography
- * ========================================================================== */
-/*
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome. */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/*
- * Address styling not present in IE 8/9, Safari 5, and Chrome. */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/*
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
-b,
-strong {
-  font-weight: bold;
-}
-
-/*
- * Address styling not present in Safari 5 and Chrome. */
-dfn {
-  font-style: italic;
-}
-
-/*
- * Address differences between Firefox and other browsers. */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/*
- * Address styling not present in IE 8/9. */
-mark {
-  background: yellow;
-  color: black;
-}
-
-/*
- * Correct font family set oddly in Safari 5 and Chrome. */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-/*
- * Improve readability of pre-formatted text in all browsers. */
-pre {
-  white-space: pre-wrap;
-}
-
-/*
- * Set consistent quote types. */
-q {
-  quotes: "“""”""‘""’";
-}
-
-/*
- * Address inconsistent and variable font size in all browsers. */
-small {
-  font-size: 80%;
-}
-
-/*
- * Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* ==========================================================================
- * Embedded content
- * ========================================================================== */
-/*
- * Remove border when inside `a` element in IE 8/9. */
-img {
-  border: 0;
-}
-
-/*
- * Correct overflow displayed oddly in IE 9. */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* ==========================================================================
- * Figures
- * ========================================================================== */
-/*
- * Address margin not present in IE 8/9 and Safari 5. */
-figure {
-  margin: 0;
-}
-
-/* ==========================================================================
- * Forms
- * ========================================================================== */
-/*
- * Define consistent border, margin, and padding. */
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/*
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets. */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/*
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome. */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-}
-
-/*
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet. */
-button,
-input {
-  line-height: normal;
-}
-
-/*
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera. */
-button,
-select {
-  text-transform: none;
-}
-
-/*
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others. */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-}
-
-/*
- * Re-set default cursor for disabled elements. */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/*
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10. */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/*
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof). */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
-}
-
-/*
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X. */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
- * Remove inner padding and border in Firefox 4+. */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/*
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers. */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
-}
-
-/* ==========================================================================
- * Tables
- * ========================================================================== */
-/*
- * Remove most spacing between table cells. */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* ==========================================================================
- * CSS SETTING
- * by Hiroaki WAKATSUKI
- * Converted 2014/2/16
- * ========================================================================== */
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-img,
-object,
-embed {
-  max-width: 100%;
-  height: auto;
-}
-
-object,
-embed {
-  height: 100%;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
-.clearfix:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  clear: both;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-.hide {
-  display: none;
-}
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-textarea {
-  height: auto;
-  min-height: 50px;
-}
-
-select {
-  width: 100%;
-}
-
-i {
-  font-style: normal;
-}
-
-.animate {
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-}
-
-.button {
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.row {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 660px;
-  *zoom: 1;
-}
-
-.row .grid-1,
-.row .grid-2,
-.row .grid-3,
-.row .grid-4,
-.row .grid-5,
-.row .grid-6,
-.row .grid-7,
-.row .grid-8,
-.row .grid-9,
-.row .grid-10,
-.row .grid-11,
-.row .grid-12 {
-  float: left;
-  margin-left: 0.9%;
-  margin-right: 0.9%;
-}
-
-.row .grid-1 {
-  width: 6.53333%;
-}
-
-.row .grid-2 {
-  width: 14.86667%;
-}
 
-.row .grid-3 {
-  width: 23.2%;
+/*header（ロゴとメニューが入ったブロック）
+---------------------------------------------------------------------------*/
+header {
+	width: 250px;		/*幅*/
+	padding: 0 2vw;		/*ヘッダー内の余白。上下、左右への順番。*/
+	margin-top: 5vw;	/*ヘッダーの上に空けるスペース*/
+	text-align: center;	/*テキストをセンタリング*/
 }
 
-.row .grid-4 {
-  width: 31.53333%;
+/*ロゴ*/
+header #logo img {display: block;}
+header #logo {
+	padding: 0;margin: 0;
 }
 
-.row .grid-5 {
-  width: 39.86667%;
+/*ロゴ下の小文字*/
+header #logo span {
+	display: block;
+	font-size: 0.7rem;	/*文字サイズを70%に*/
 }
 
-.row .grid-6 {
-  width: 48.2%;
-}
-
-.row .grid-7 {
-  width: 56.53333%;
-}
-
-.row .grid-8 {
-  width: 64.86667%;
-}
-
-.row .grid-9 {
-  width: 73.2%;
-}
-
-.row .grid-10 {
-  width: 81.53333%;
-}
-
-.row .grid-11 {
-  width: 89.86667%;
-}
-
-.row .grid-12 {
-  width: 98.2%;
-}
-
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-
-.row:after {
-  clear: both;
-}
-
-.row.collapse>.column,
-.row.collapse>.columns {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  float: left;
-}
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
 
-.row.collapse .row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.row .row {
-  width: auto;
-  margin-left: -0.9375em;
-  margin-right: -0.9375em;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: none;
-  *zoom: 1;
-}
-
-.row .row:before,
-.row .row:after {
-  content: " ";
-  display: table;
-}
-
-.row .row:after {
-  clear: both;
-}
-
-.row .row.collapse {
-  width: auto;
-  margin: 0;
-  max-width: none;
-  *zoom: 1;
-}
+	header {
+		position: fixed;	/*スクロールしても動かないようにする設定*/
+		left: 0px;
+		top: 0px;
+	}
 
-.row .row.collapse:before,
-.row .row.collapse:after {
-  content: " ";
-  display: table;
-}
-
-.row .row.collapse:after {
-  clear: both;
-}
-
-@media only screen and (max-width: 40em) {
-
-  .row {
-    width: 100%;
-    padding: 0 20px !important;
-  }
-
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4,
-  .row .grid-5,
-  .row .grid-6,
-  .row .grid-7,
-  .row .grid-8,
-  .row .grid-9,
-  .row .grid-10,
-  .row .grid-11,
-  .row .grid-12 {
-    float: none;
-    width: 100% !important;
-    margin: 0 !important;
-    position: static !important;
-  }
-}
-
-/* max-width 640px, mobile-only styles, use when QAing mobile issues */
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4 {
-    width: 48.2% !important;
-  }
-}
+	}/*追加指定ここまで*/
 
-/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
-body,
-html {
-  height: 100%;
-  background-color: #f3f4f5;
-}
+	/*画面の高さが500px以下の追加指定*/
+	@media screen and (max-height:500px) {
 
-body {
-  padding-top: 60px;
-}
+	header {
+		position: absolute;	/*メニューが切れて見えなくならないように、fixedを中止する*/
+	}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-body {
-  line-height: 1.57;
-  letter-spacing: 0.15em;
-  font-size: 16px;
-  color: #666;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-  margin: 0;
-}
+	}/*追加指定ここまで*/
 
-a {
-  text-decoration: none;
-  color: #2ef95d;
-}
 
-a:hover {
-  color: #ffffff;
-}
+/*mainブロック（右側のsectionを囲むブロック）
+---------------------------------------------------------------------------*/
 
-.bold {
-  font-weight: bold;
-}
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
 
-.serif,
-div.contents.row div.content_post p {
-  font-family: 'ほのか明朝', serif;
-}
+	main {
+		margin-left: 250px;	/*headerのwidthに合わせる*/
+	}
 
-.ultra {
-  font-size: 2em !important;
-}
+	}/*追加指定ここまで*/
 
-::selection {
-  background: #D8D8D8;
-}
 
-.transition,
-a,
-form input[type="submit"] {
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
+/*main内のh2*/
+main h2 {
+	font-size: 2.5rem;	/*文字サイズを2.5倍*/
 }
 
-.btn,
-header.header div.header__bar.row div.grid-6 a.post {
-  padding: 8px 20px;
-  font-size: 14px;
-  border: 2px solid #2ef95d;
-  color: #2ef95d;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 3px;
-  display: inline-block;
-
+/*main内のh3*/
+main h3 {
+	font-size: 1.5rem;	/*文字サイズを1.5倍*/
 }
 
-.btn:hover,
-header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: #ffffff;
-  color: #ffffff;
-}
 
-.title {
-  font-weight: bold;
-}
 
-.title--big {
-  font-size: 1.5em;
-  font-weight: bold;
-}
+/*メニューブロック初期設定
+---------------------------------------------------------------------------*/
+/*メニューをデフォルトで非表示*/
+#menubar {display: none;}
 
-.title--big i {
-  font-style: italic;
-  font-size: 1.8em;
-}
+/*上で非表示にしたメニューを表示させる為の設定*/
+.large-screen #menubar {display: block;}
+.small-screen #menubar.display-block {display: block;}
 
-header.header {
-  padding: 10px;
-  border-bottom: 1px solid #D8D8D8;
-  background-color: hsl(243, 97%, 49%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  height: 62px;
-}
+/*3本バーをデフォルトで非表示*/
+#menubar_hdr.display-none {display: none;}
 
-header.header div.header__bar.row {
-  position: relative;
-}
 
-header.header div.header__bar.row h1.grid-6 {
-  font-size: 20px;
-  line-height: 41px;
-  float: left;
+/*メニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック全体*/
+#menubar ul {
+	margin: 3rem 0;	/*メニューブロックの外側に空けるスペース*/
 }
 
-header.header div.header__bar.row h1.grid-6 a {
-  display: block;
+/*メニュー一個あたり*/
+#menubar nav a {
+	text-decoration: none;display: block;
+	background: rgba(0,0,0,0.5);	/*背景色。0,0,0は黒のことで0.5は色が50%出た状態。*/
+	border: 1px solid rgba(255,255,255,0.3);	/*枠線の幅、線種、色。255,255,255は白のことで0.3は色が30%出た状態。*/
+	color: #fff;		/*文字色*/
+	padding: 0.5rem;	/*余白*/
+	margin: 0.5rem 0;	/*メニューの外側に空けるスペース。上下、左右。*/
+	border-radius: 5px;	/*角を丸くする指定*/
 }
 
-header.header div.header__bar.row div.grid-6 {
-  float: right;
-  text-align: right;
+/*マウスオン次*/
+#menubar nav a:hover {
+	background: rgba(0,0,0,0.9);	/*背景色。透明度を変更して濃くします。*/
+	border: 1px solid rgba(255,255,255,0.9);	/*枠線。透明度を変更して濃くします。*/
 }
 
-header.header div.header__bar.row div.grid-6 a.post {
-  width: 120px;
-  display: inline-left;
-  margin-left: 10px;
+/*900px以下画面でのメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック全体*/
+.small-screen #menubar.display-block {
+	position: fixed;overflow: auto;z-index: 100;
+	left: 0px;top: 0px;
+	width: 100%;
+	height: 100%;
+	padding-top: 80px;
+	background: rgba(0,0,0,0.8);		/*背景色*/
+	animation: animation1 0.2s both;	/*animation1を実行する。0.2sは0.2秒の事。*/
 }
-
-header.header .user_nav {
-  position: relative;
-  height: 100px;
-  right: 0;
+.small-screen #menubar ul {
+	margin: 3rem;	/*メニューブロックの外側に空けるスペース*/
 }
 
 
-
-.form {
-  background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
-  background-size: cover;
+/*３本バー（ハンバーガー）アイコン設定
+---------------------------------------------------------------------------*/
+/*３本バーを囲むブロック*/
+#menubar_hdr {
+	animation: opa1 0s 0.2s both;
+	position: fixed;z-index: 101;
+	cursor: pointer;
+	right: 30px;			/*右からの配置場所指定*/
+	top: 30px;				/*上からの配置場所指定*/
+	padding: 16px 14px;		/*上下、左右への余白*/
+	width: 46px;			/*幅（３本バーが出ている場合の幅になります）*/
+	height: 46px;			/*高さ*/
+	display: flex;					/*flexボックスを使う指定*/
+	flex-direction: column;			/*子要素（３本バー）部分。flexはデフォルトで横並びになるので、それを縦並びに変更。*/
+	justify-content: space-between;	/*並びかたの種類の指定*/
+	background: #d30c44;	/*背景色*/
 }
 
-.form .contents {
-  position: absolute;
-  left: 0;
-  top: 30%;
-  bottom: 0;
-  right: 0;
+/*バー１本あたりの設定*/
+#menubar_hdr span {
+	display: block;
+	transition: 0.3s;	/*アニメーションにかける時間。0.3秒。*/
+	border-top: 1.5px solid #fff;	/*線の幅、線種、色*/
 }
 
-.form footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
+/*×印が出ている状態の設定。※１本目および２本目のバーの共通設定。*/
+#menubar_hdr.ham span:nth-of-type(1),
+#menubar_hdr.ham span:nth-of-type(3) {
+	transform-origin: center center;	/*変形の起点。センターに。*/
+	width: 20px;						/*バーの幅*/
 }
 
-div.contents.row h2 {
-  margin: 20px 0;
-  padding: 0;
-  font-weight: normal;
+/*×印が出ている状態の設定。※１本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(1){
+	transform: rotate(45deg) translate(3.8px, 5px);	/*回転45°と、X軸Y軸への移動距離の指定*/
 }
 
-div.contents.row h2 strong {
-  font-weight: bold;
-  padding-right: 5px;
-  font-size: 1.2em;
+/*×印が出ている状態の設定。※３本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(3){
+	transform: rotate(-45deg) translate(3.8px, -5px);	/*回転-45°と、X軸Y軸への移動距離の指定*/
 }
 
-div.contents.row .new_user {
-  font-family: "游ゴシック", "YuGothic";
+/*×印が出ている状態の設定。※２本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(2){
+	display: none;	/*２本目は使わないので非表示にする*/
 }
 
-div.contents.row div.content_post {
-  margin: 20px 0;
-  padding: 30px;
-  position: relative;
-  height: 100px;
-  color: #fff;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-}
 
-div.contents.row div.content_post:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FFA60000');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  z-index: 1;
-  border-radius: 3px;
+/*メニュー内にあるソーシャルメディアのアイコン
+---------------------------------------------------------------------------*/
+ul.icons {
+	list-style: none;
+	margin: 0;padding: 0;
+	display: flex;
+	justify-content: center;
 }
-
-div.contents.row div.content_post .more {
-  position: absolute;
-  cursor: pointer;
-  top: 20px;
-  right: 30px;
-  z-index: 2;
-  height: 100px;
-  width: 80px;
-  text-align: right;
+ul.icons li {
+	margin-right: 10px;	/*アイコン同士の余白*/
 }
-
-div.contents.row div.content_post .more:hover ul.more_list {
-  display: block;
+ul.icons i {
+	font-size: 20px;	/*Font Awesomeのアイコンサイズ*/
 }
 
-div.contents.row div.content_post .more ul.more_list {
-  position: absolute;
-  text-align: left;
-  width: 80px;
-  right: 0;
-  font-size: 12px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  display: none;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
 
-div.contents.row div.content_post .more ul.more_list li {
-  border-bottom: 1px solid #ddd;
+/*section
+---------------------------------------------------------------------------*/
+/*フェード設定*/
+.section::before {
+	opacity: 0; /* 初期状態では非表示 */
+	transition: opacity 1s; /* 1秒かけてフェードイン/フェードアウト */
 }
-
-div.contents.row div.content_post .more ul.more_list li:last-child {
-  border-bottom: 0;
+.section.active::before {
+	opacity: 1; /* フェードイン状態 */
 }
-
-div.contents.row div.content_post .more ul.more_list li a {
-  display: block;
-  padding: 5px;
+.section.inactive::before {
+	opacity: 0; /* フェードアウト状態 */
 }
 
-div.contents.row div.content_post .more ul.more_list li a:hover {
-  background-color: #57C3E9;
-  color: #fff;
+/*section要素*/
+section {
+	padding: 2vw 5vw;	/*ボックス内の余白。上下、左右への順番。*/
 }
 
-div.contents.row div.content_post p {
-  position: absolute;
-  left: 30px;
-  right: 100px;
-  bottom: 30px;
-  margin: 0;
-  font-size: 20px;
-  z-index: 2;
-  font-weight: bold;
-  text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+/*４つのsectionブロックの共通設定*/
+#section1,#section2,#section3,#section4 {
+	min-height: calc(100dvh - 50px);	/*最低の高さ。100dvhは画面の高さ100%のこと。50pxは下のmarginの値。*/
+	margin-bottom: 50px;	/*ボックスの下に空けるスペース*/
+	padding: 5vw;			/*ボックス内の余白*/
 }
-
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
 
+	#section1,#section2,#section3,#section4 {
+		border-radius: 3vw 0 0 3vw;	/*角丸の指定。左上、右上、右下、左下への順番。*/
+	}
 
-div.contents.row div.content_post span.name a:hover {
-  text-decoration: underline;
-  color: #aaa;
-}
-
-div.contents.row div.content_post span.name span {
-  font-size: 9px;
-  display: block;
-}
+	}/*追加指定ここまで*/
 
-div.contents.row .success {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
-  text-align: center;
-}
 
-div.contents.row .success h3 {
-  margin: 10px auto;
+/*背景画像を置く為の設定*/
+#section1::before,#section2::before,#section3::before,#section4::before {
+	content: '';
+	position: fixed;z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.content_detail {
-  height: 400px;
-  overflow: hidden; 
-  margin: 20px 0;
-  padding: 30px;
-  position: relative;
-  color: black;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+/*section1の設定*/
+#section1 {
+	color: #fff;	/*文字色*/
 }
-
-.content_detail .text-content {
-  height: 100%;
-  overflow-y: auto; 
-  position: relative;
-  z-index: 2; 
+#section1::before {
+	background: url('../images/section1.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
 }
 
-.content_detail:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  *zoom: 1;
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  z-index: 1;
-  border-radius: 3px;
-  pointer-events: none;
+/*section2の設定*/
+#section2 {
+	background-color: rgba(59,96,94,0.6);	/*背景色。３つ目までの数字はrgbでの色指定。最後の小数点は透明度。*/
+	color: #fff;	/*文字色*/
 }
-
-.show_boxes{
-display: flex;
-justify-content: center;
+#section2::before {
+	background: url('../images/section2.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
 }
 
-.show_box{
-  height: 30px;
-  width: 100px;
+/*section3の設定*/
+#section3 {
+	background-color: rgba(100,88,79,0.6);	/*背景色。３つ目までの数字はrgbでの色指定。最後の小数点は透明度。*/
+	color: #fff;	/*文字色*/
 }
-
-form input,
-form textarea {
-  width: 100%;
-  margin: 5px 0 15px;
-  padding: 10px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
+#section3::before {
+	background: url('../images/section3.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
 }
 
-form input[type="submit"] {
-  background-color: #57C3E9;
-  border-radius: 20px;
-  color: #fff;
-  border: 0;
-  font-size: 18px;
+/*section4の設定*/
+#section4 {
+	color: #fff;	/*文字色*/
 }
-
-form input[type="submit"]:hover {
-  background-color: #84d3ef;
+#section4::before {
+	background: #437737;	/*section4だけは背景画像ではなく、単に背景色だけ指定しました。*/
 }
 
-.container {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
-}
+	/*縦向き端末から見た場合に背景画像をチェンジする*/
+	@media (orientation: portrait) {
 
-.container h3 {
-  margin: 0 0 20px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 20px;
-  color: #666;
-}
+	#section1::before {
+		background-image: url('../images/section1_portrait.jpg');
+	}
+	#section2::before {
+		background-image: url('../images/section2_portrait.jpg');
+	}
+	#section3::before {
+		background-image: url('../images/section3_portrait.jpg');
+	}
 
-.comments {
-  padding: 5px;
-  margin-top: 15px;
-}
+	}/*追加指定ここまで*/
 
-.comments a {
-  color: #57C3E9;
-}
+/*背景色を入れない場合（画像だけを表示したい場合）*/
+.no-bgcolor {background-color: transparent !important;}
 
-.comments a:hover {
-  text-decoration: underline;
-}
 
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer small {font-size: 100%;}
 footer {
-  margin: 30px auto;
-  padding: 10px;
-  color: #D8D8D8;
+	font-size: 0.8rem;
+	text-align: center;		/*内容をセンタリング*/
+	padding-bottom: 1rem;
 }
 
-footer p {
-  text-align: center;
+/*リンクテキスト*/
+footer a {color: inherit;text-decoration: none;}
+
+
+/*お知らせブロック
+---------------------------------------------------------------------------*/
+/*記事の下に空ける余白*/
+.new dd {
+	padding-bottom: 1rem;
 }
 
-.search-form {
-  text-align: center;
-  padding-top: 32px;
+/*ブロック内のspan。日付の横のアイコン的な部分の共通設定*/
+.new dt span {
+	display: inline-block;
+	text-align: center;
+	line-height: 1.8;		/*行間（アイコンの高さ）*/
+	border-radius: 3px;		/*角を丸くする指定*/
+	padding: 0 0.5rem;		/*上下、左右へのブロック内の余白*/
+	width: 6rem;			/*幅。６文字分。*/
+	transform: scale(0.8);	/*80%のサイズに縮小*/
+	background: rgba(255,255,255,0.8);		/*背景色*/
+	color: #333;			/*文字色*/
 }
 
-.search-form .search-input {
-  width: 30%;
-  margin-right: 10px;
+	/*画面幅700px以上の追加指定*/
+	@media screen and (min-width:700px) {
+
+	/*ブロック全体*/
+	.new {
+		display: grid;	/*gridを使う指定*/
+		grid-template-columns: auto 1fr;	/*横並びの指定。日付とアイコン部分の幅は自動で、内容が入るブロックは残り幅一杯とる。*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*list-grid（gallery.htmlでサムネイルを表示している部分の設定です）
+---------------------------------------------------------------------------*/
+/*listブロックを囲む外側のボックス*/
+.list-grid-trimming {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);	/*ここの「4」の数字が横に並べる数です。3列がいいなら(3, 1fr)です。*/
+	gap: 1rem;	/*マージン的な数値。サムネイル間を１文字分あけます。*/
 }
 
-.search-form .search-btn {
-  width: 10%;
+/*ボックスを正方形にトリミングする為の指定なので変更しない。*/
+.list-grid-trimming .list {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-top: 100%;
 }
+.list-grid-trimming .list a {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+.list-grid-trimming .list img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: 0.5s;	/*マウスオン時にかける時間。0.5秒。*/
+}
+
+/*マウスオン時の画像*/
+.list-grid-trimming .list img:hover {
+	transform: scale(1.1);	/*1.1倍に拡大*/
+	filter: contrast(1.3);	/*コントラストを1.3倍*/
+}
+
+
+/*PAGE TOP（↑）設定
+---------------------------------------------------------------------------*/
+.pagetop-show {display: block;}
+
+/*ボタンの設定*/
+.pagetop a {
+	display: block;text-decoration: none;text-align: center;z-index: 99;
+	animation: opa1 0.2s 0.2s both;	/*一瞬ボタンが出ちゃうのを隠す為の応急措置*/
+	position: fixed;	/*スクロールに追従しない(固定で表示)為の設定*/
+	right: 20px;		/*右からの配置場所指定*/
+	bottom: 20px;		/*下からの配置場所指定*/
+	color: #fff;		/*文字色*/
+	font-size: 1.5rem;	/*文字サイズ*/
+	background: rgba(0,0,0,0.2);	/*背景色。0,0,0は黒の事で0.2は色が20%出た状態。*/
+	width: 60px;		/*幅*/
+	line-height: 60px;	/*高さ*/
+	border-radius: 50%;	/*円形にする*/
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.clearfix::after {content: "";display: block;clear: both;}
+.l {text-align: left !important;}
+.c {text-align: center !important;}
+.r {text-align: right !important;}
+.ws {width: 95%;display: block;}
+.wl {width: 95%;display: block;}
+.mb0 {margin-bottom: 0px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.look {display: inline-block;padding: 0px 10px;background: #000;border: 1px solid #fff;border-radius: 3px;margin: 5px 0; word-break: break-all;}
+.small {font-size: 0.75em;}
+.large {font-size: 2em; letter-spacing: 0.1em;}
+.color-check, .color-check a {color: #ffcf0d;}
+.pc {display: none;}
+.dn {display: none !important;}
+.block {display: block !important;}
+
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
+
+		.ws {width: 48%;display: inline;}
+		.sh {display: none;}
+		.pc {display: block;}
+
+	}/*画面幅900px以上の追加指定ここまで*/
