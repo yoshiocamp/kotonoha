@@ -107,19 +107,8 @@ header {
 	text-align: center;	/*テキストをセンタリング*/
 }
 
-/*ロゴ*/
-header #logo img {display: block;}
-header #logo {
-	padding: 0;margin: 0;
-}
 
-/*ロゴ下の小文字*/
-header #logo span {
-	display: block;
-	font-size: 0.7rem;	/*文字サイズを70%に*/
-}
-
-	/*画面幅900px以上の追加指定*/
+	
 	@media screen and (min-width:900px) {
 
 	header {
@@ -128,16 +117,16 @@ header #logo span {
 		top: 0px;
 	}
 
-	}/*追加指定ここまで*/
+	}
 
-	/*画面の高さが500px以下の追加指定*/
+	
 	@media screen and (max-height:500px) {
 
 	header {
-		position: absolute;	/*メニューが切れて見えなくならないように、fixedを中止する*/
+		position: absolute;	
 	}
 
-	}/*追加指定ここまで*/
+	}
 
 
 /*mainブロック（右側のsectionを囲むブロック）
@@ -267,20 +256,7 @@ main h3 {
 }
 
 
-/*メニュー内にあるソーシャルメディアのアイコン
----------------------------------------------------------------------------*/
-ul.icons {
-	list-style: none;
-	margin: 0;padding: 0;
-	display: flex;
-	justify-content: center;
-}
-ul.icons li {
-	margin-right: 10px;	/*アイコン同士の余白*/
-}
-ul.icons i {
-	font-size: 20px;	/*Font Awesomeのアイコンサイズ*/
-}
+
 
 
 /*section
@@ -302,8 +278,8 @@ section {
 	padding: 2vw 5vw;	/*ボックス内の余白。上下、左右への順番。*/
 }
 
-/*４つのsectionブロックの共通設定*/
-#section1,#section2,#section3,#section4 {
+
+#section2 {
 	min-height: calc(100dvh - 50px);	/*最低の高さ。100dvhは画面の高さ100%のこと。50pxは下のmarginの値。*/
 	margin-bottom: 50px;	/*ボックスの下に空けるスペース*/
 	padding: 5vw;			/*ボックス内の余白*/
@@ -328,57 +304,105 @@ section {
 	height: 100%;
 }
 
-/*section1の設定*/
-#section1 {
-	color: #fff;	/*文字色*/
-}
-#section1::before {
-	background: url('../images/section1.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
-}
 
 /*section2の設定*/
 #section2 {
-	background-color: rgba(59,96,94,0.6);	/*背景色。３つ目までの数字はrgbでの色指定。最後の小数点は透明度。*/
-	color: #fff;	/*文字色*/
-}
-#section2::before {
-	background: url('../images/section2.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
+	background-color: rgba(0, 200, 255, 0.6);	
+	
 }
 
-/*section3の設定*/
-#section3 {
-	background-color: rgba(100,88,79,0.6);	/*背景色。３つ目までの数字はrgbでの色指定。最後の小数点は透明度。*/
-	color: #fff;	/*文字色*/
-}
-#section3::before {
-	background: url('../images/section3.jpg') no-repeat center center / cover;	/*背景画像の読み込み*/
+
+	.content_kotoba {
+		display: flex;
+		flex-direction: column; 
+	}
+	
+	.content_link {
+		text-decoration: none; 
+		margin-bottom: 20px; 
+	}
+
+
+.content_post  {
+	color: #fff;
+background-color: rgb(34, 192, 2);
+	padding: 30px;
+	position: relative;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  height: 100px; /* ボックスの高さを調整 */
 }
 
-/*section4の設定*/
-#section4 {
-	color: #fff;	/*文字色*/
+.content_show{
+	color: #fff;
+background-color: rgb(34, 192, 2);
+	padding: 30px;
+	position: relative;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+    
 }
-#section4::before {
-	background: #437737;	/*section4だけは背景画像ではなく、単に背景色だけ指定しました。*/
+
+form input,
+form textarea {
+  width: 100%;
+  margin: 20px 0 30px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+	
 }
+
+form input[type="submit"] {
+  background-color: rgb(34, 192, 2);
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #84d3ef;
+}
+
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: rgba(0, 200, 255, 0.6);	
+  box-sizing: border-box;
+	min-height: calc(100dvh - 50px);	
+	margin-bottom: 50px;	
+	border-radius: 3px;
+}
+
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #ffffff;
+}
+
 
 	/*縦向き端末から見た場合に背景画像をチェンジする*/
 	@media (orientation: portrait) {
 
-	#section1::before {
-		background-image: url('../images/section1_portrait.jpg');
-	}
+	
 	#section2::before {
 		background-image: url('../images/section2_portrait.jpg');
-	}
-	#section3::before {
-		background-image: url('../images/section3_portrait.jpg');
-	}
+	
 
-	}/*追加指定ここまで*/
-
-/*背景色を入れない場合（画像だけを表示したい場合）*/
-.no-bgcolor {background-color: transparent !important;}
+	}
+	}
 
 
 /*フッター設定

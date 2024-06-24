@@ -1,10 +1,22 @@
+
+
+<body>
+
+<main>
+
+<section id="section2" class="section">
 <div class="contents row">
-  <div class="content_detail" style="background-image:mitei ">
-    <div class="text-content">
-       <p><%= @kotoba.text %></p>
-    </div>
+  <div class="content_kotoba">
+        <div class="content_show" style="background-image:mitei ">
+          <p><%= simple_format(@kotoba.text) %></p>
+        </div>
   </div>
 </div>
+</section>
+
+</main>
+
+</body>
 
 <div class="show_boxes">
   <div class="show_box">
