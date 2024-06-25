@@ -262,16 +262,6 @@ main h3 {
 /*section
 ---------------------------------------------------------------------------*/
 /*フェード設定*/
-.section::before {
-	opacity: 0; /* 初期状態では非表示 */
-	transition: opacity 1s; /* 1秒かけてフェードイン/フェードアウト */
-}
-.section.active::before {
-	opacity: 1; /* フェードイン状態 */
-}
-.section.inactive::before {
-	opacity: 0; /* フェードアウト状態 */
-}
 
 /*section要素*/
 section {
