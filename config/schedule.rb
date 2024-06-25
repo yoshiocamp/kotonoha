@@ -22,5 +22,5 @@
 #   rake "sweep:kotobas"
 # end
 every 1.minute do
-  rake 'sweep:kotobas'
+  rake sweep:"kotobas"
 end
