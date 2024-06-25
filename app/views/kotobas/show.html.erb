@@ -1,0 +1,33 @@
+
+
+<body>
+
+<main>
+
+<section id="section2" class="section">
+<div class="contents row">
+  <div class="content_kotoba">
+        <div class="content_show" style="background-image:mitei ">
+          <p><%= simple_format(@kotoba.text) %></p>
+        </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+</body>
+
+<div class="show_boxes">
+  <div class="show_box">
+    <%= link_to '編集', edit_kotoba_path(@kotoba.id) %>
+  </div>  
+  <div class="show_box">
+    <%= link_to '削除', kotoba_path(@kotoba.id),data: { turbo_method: :delete } %>
+  </div>  
+  <div class="show_box">
+    <%= link_to '滔々', delete_item_kotoba_path(@kotoba), data: { turbo_method: :delete } %>
+  </div>    
+</div>  
+
+ 

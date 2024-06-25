@@ -1,0 +1,21 @@
+<body>
+
+<main>
+
+<section id="section2" class="section">
+<div class="contents row">
+  <div class="content_kotoba">
+   <% @kotobas.each do |kotoba| %>
+      <%= link_to kotoba_path(kotoba.id), class: "content_link" do %>
+        <div class="content_post" style="background-image:mitei ">
+          <p><%= simple_format(truncate_with_newline(kotoba.text)) %></p>
+        </div>
+     <% end %>   
+    <% end %> 
+  </div>
+</div>
+</section>
+
+</main>
+
+</body>
