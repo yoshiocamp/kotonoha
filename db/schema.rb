@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_21_095423) do
     t.datetime "updated_at", null: false
     t.integer "delete_count"
     t.string "nickname"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, length: 191
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, length: 191
   end
 
 end

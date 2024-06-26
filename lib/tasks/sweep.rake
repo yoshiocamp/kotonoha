@@ -7,6 +7,6 @@
 namespace :sweep do
   desc "Delete kotobas after 1 minute"
   task kotobas: :environment do
-    Kotoba.where('created_at <= ?', 1.minute.ago).destroy_all
+    Kotoba.where('created_at <= ?', 1.hour.ago).destroy_all
   end
 end

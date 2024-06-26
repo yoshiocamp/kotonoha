@@ -312,10 +312,12 @@ section {
 		margin-bottom: 20px; 
 	}
 
+	
 
 .content_post  {
+	display: flex;
 	color: #fff;
-background-color: rgb(34, 192, 2);
+  background-color: rgb(34, 192, 2);
 	padding: 5px;
 	position: relative;
   color: #fff;
@@ -326,9 +328,27 @@ background-color: rgb(34, 192, 2);
   height: 100px; /* ボックスの高さを調整 */
 }
 
+.leaf-1 {
+	width: 90px;
+	height: 90px;
+	border-radius: 0 70px;
+	background-color: #1f801f;
+	transform: rotate(0deg);
+}
+
+.content_post_time{
+	height: 20px;
+	font-size: 15px;
+	margin-bottom: 0;
+}
+
+.content_post_main{
+	font-size: 20px;
+}
+
 .content_show{
 	color: #fff;
-background-color: rgb(34, 192, 2);
+  background-color: rgb(34, 192, 2);
 	padding: 30px;
 	position: relative;
   color: #fff;

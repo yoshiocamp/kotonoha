@@ -8,13 +8,21 @@
    <% @kotobas.each do |kotoba| %>
       <%= link_to kotoba_path(kotoba.id), class: "content_link" do %>
         <div class="content_post" style="background-image:mitei ">
-          <p><%= "この言の葉は#{(kotoba.created_at + 1.hours).in_time_zone.strftime('%Y-%m-%d %H:%M')}に流れていきます" %></p>
-          <p><%= simple_format(truncate_with_newline(kotoba.text)) %></p>
+          <div class="leaf-1"></div> 
+          <div class="content_post_box">
+            <div class="content_post_time">
+              <p><%= kotoba.created_at.in_time_zone.strftime('%Y-%m-%d %H:%M') %></p>
+            </div> 
+            <div class="content_post_main">
+              <p><%= simple_format(truncate_with_newline(kotoba.text)) %></p>
+            </div>
+          </div> 
         </div>
      <% end %>   
     <% end %> 
   </div>
 </div>
+
 </section>
 
 </main>
