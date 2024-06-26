@@ -21,6 +21,6 @@
 # every 1.day, at: '12:00 am' do
 #   rake "sweep:kotobas"
 # end
-every 1.minute do
+every 1.hour do
   rake sweep:"kotobas"
 end

@@ -285,7 +285,7 @@ section {
 
 
 /*背景画像を置く為の設定*/
-#section1::before,#section2::before,#section3::before,#section4::before {
+#section2::before {
 	content: '';
 	position: fixed;z-index: -1;
 	top: 0;
@@ -316,7 +316,7 @@ section {
 .content_post  {
 	color: #fff;
 background-color: rgb(34, 192, 2);
-	padding: 30px;
+	padding: 5px;
 	position: relative;
   color: #fff;
   background-size: cover;

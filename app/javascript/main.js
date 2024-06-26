@@ -226,3 +226,4 @@ $(document).ready(function () {
   // 初期チェック
   checkVisibility();
 });
+
