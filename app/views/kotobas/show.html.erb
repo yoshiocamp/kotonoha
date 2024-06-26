@@ -14,7 +14,7 @@
               <p><%= @kotoba.created_at.in_time_zone.strftime('%Y-%m-%d %H:%M') %></p>
             </div> 
             <div class="content_post_main">
-              <p><%= simple_format(truncate_with_newline(@kotoba.text)) %></p>
+              <p><%= simple_format(@kotoba.text) %></p>
             </div>
           </div> 
         </div>

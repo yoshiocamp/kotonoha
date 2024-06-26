@@ -347,7 +347,6 @@ section {
 }
 
 .content_show{
-	display: flex;
 	color: #fff;
   background-color: rgb(34, 192, 2);
 	padding: 30px;

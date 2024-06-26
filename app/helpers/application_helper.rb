@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def truncate_with_newline(text, length: 45, omission: '...')
+    def truncate_with_newline(text, length: 35, omission: '...')
       if text.include?("\n")
         first_line = text.split("\n").first
       truncated_first_line = first_line.truncate(length, omission: omission)
