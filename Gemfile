@@ -80,4 +80,5 @@ group :production do
 end
 
 gem 'devise'
-gem 'whenever', require: false
+# gem 'whenever', require: false
+gem 'whenever'
