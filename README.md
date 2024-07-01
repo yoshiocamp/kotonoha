@@ -33,7 +33,8 @@ Basic認証Pass 2222
 自動削除機能
 コメント機能
 
-データベース設計	ER図を添付。
+データベース設計	
+[![Image from Gyazo](https://i.gyazo.com/73270757ac0caef2c13bf546e8cb13b2.png)](https://gyazo.com/73270757ac0caef2c13bf546e8cb13b2)
 
 画面遷移図	画面遷移図を添付。
 

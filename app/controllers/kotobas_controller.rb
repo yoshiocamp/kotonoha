@@ -33,6 +33,7 @@ class KotobasController < ApplicationController
 
 
   def show
+    @user = @kotoba.user
   end
 
   def delete_kotoba

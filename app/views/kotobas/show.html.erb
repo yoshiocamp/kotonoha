@@ -27,15 +27,19 @@
 </body>
 
 <div class="show_boxes">
-  <div class="show_box">
-    <%= link_to '編集', edit_kotoba_path(@kotoba.id) %>
-  </div>  
-  <div class="show_box">
-    <%= link_to '削除', kotoba_path(@kotoba.id),data: { turbo_method: :delete } %>
-  </div>  
-  <div class="show_box">
-    <%= link_to '滔々', delete_item_kotoba_path(@kotoba), data: { turbo_method: :delete } %>
-  </div>    
+  <% if user_signed_in?%>
+       <% if current_user.id == @user.id %>
+        <div class="show_box">
+           <%= link_to '編集', edit_kotoba_path(@kotoba.id) %>
+        </div>  
+        <div class="show_box">
+           <%= link_to '削除', kotoba_path(@kotoba.id),data: { turbo_method: :delete } %>
+        </div>  
+        <div class="show_box">
+           <%= link_to '滔々', delete_item_kotoba_path(@kotoba), data: { turbo_method: :delete } %>
+        </div> 
+       <% end %>   
+  <% end %>          
 </div>  
 
  
