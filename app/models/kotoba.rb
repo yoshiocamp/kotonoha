@@ -3,7 +3,8 @@ class Kotoba < ApplicationRecord
   validate :check_forbidden_words
 
   belongs_to :user
-
+  has_many :comments
+  
   def soft_delete
     self.update_attribute(:delete_at, Time.current)
   end
