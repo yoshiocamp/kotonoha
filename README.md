@@ -47,7 +47,7 @@ Basic認証Pass 2222
 コメント機能
 
 ## データベース設計	
-[![Image from Gyazo](https://i.gyazo.com/73270757ac0caef2c13bf546e8cb13b2.png)](https://gyazo.com/73270757ac0caef2c13bf546e8cb13b2)
+[![Image from Gyazo](https://i.gyazo.com/69ba522be98244934e296bec9ba65bae.png)](https://gyazo.com/69ba522be98244934e296bec9ba65bae)
 
 画面遷移図	
 [![Image from Gyazo](https://i.gyazo.com/0751f3022bb67744a2f586ff3904d6d7.png)](https://gyazo.com/0751f3022bb67744a2f586ff3904d6d7)
