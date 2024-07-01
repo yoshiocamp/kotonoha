@@ -402,6 +402,18 @@ form input[type="submit"]:hover {
   color: #ffffff;
 }
 
+.show_boxes {
+	display: flex;
+	justify-content: center;
+	background-color: #1f801f;
+	color: #ffffff;
+}
+
+.show_box{
+	font-size: 20px;
+	margin: 0 40px;
+}
+
 
 	/*縦向き端末から見た場合に背景画像をチェンジする*/
 	@media (orientation: portrait) {
