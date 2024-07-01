@@ -20,11 +20,24 @@
         </div>
   </div>
 </div>
-</section>
-
-</main>
-
-</body>
+<div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@kotoba, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "はげましの言葉を送る", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ 励ましの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+   <div class="comments">
+      <h4>＜励ましの言葉＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+</div>
 
 <div class="show_boxes">
   <% if user_signed_in?%>
@@ -41,5 +54,12 @@
        <% end %>   
   <% end %>          
 </div>  
+
+</section>
+
+</main>
+
+</body>
+
 
  

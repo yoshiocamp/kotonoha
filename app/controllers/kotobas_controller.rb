@@ -34,6 +34,8 @@ class KotobasController < ApplicationController
 
   def show
     @user = @kotoba.user
+    @comment = Comment.new
+    @comments = @kotoba.comments
   end
 
   def delete_kotoba
